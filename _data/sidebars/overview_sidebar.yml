@@ -82,6 +82,9 @@ entries:
         - title: Vaccinations
           url: /vaccinations_1.html
           output: web
+        - title: Vaccinations v2
+          url: /vaccinations_2.html
+          output: web
           
   - title: Subscription Management
     output: web,pdf
