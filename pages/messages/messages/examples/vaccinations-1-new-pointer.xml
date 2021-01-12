@@ -122,7 +122,7 @@
 				</custodian>
 				<content>
 					<attachment>
-						<contentType value="application/pdf"/>
+						<contentType value="application/fhir+xml"/>
 						<url value="https://p1.nhs.uk/Patient/12345/Immunizations"/>
 						<creation value="2016-03-08T15:26:00+01:00"/>
 					</attachment>
