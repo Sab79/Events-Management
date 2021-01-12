@@ -75,6 +75,12 @@
 				<mode value="snapshot"/>
 				<entry>
 					<item>
+						<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ResourceIdentifier-1">
+							<valueIdentifier>
+								<system value="https://supplierABC/identifiers"/>
+								<value value="ims11112"/>
+							</valueIdentifier>
+						</extension>
 						<reference value="urn:uuid:c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
 					</item>
 				</entry>
@@ -109,10 +115,10 @@
 				</subject>
 				<indexed value="2016-03-08T15:26:01+01:00"/>
 				<author>
-					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/RGD"/>
+					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/A83627"/>
 				</author>
 				<custodian>
-					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/RR8"/>
+					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/A83627"/>
 				</custodian>
 				<content>
 					<attachment>
