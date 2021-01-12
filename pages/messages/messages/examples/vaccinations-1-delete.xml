@@ -78,7 +78,7 @@
 						<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ResourceIdentifier-1">
 							<valueIdentifier>
 								<system value="https://supplierABC/identifiers"/>
-								<value value="ims11112"/>
+								<value value="abc1111"/>
 							</valueIdentifier>
 						</extension>
 						<reference value="urn:uuid:c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
@@ -180,7 +180,7 @@
 				</extension>
 				<identifier>
 					<system value="https://supplierABC/identifiers"/>
-					<value value="ims11112"/>
+					<value value="abc1111"/>
 				</identifier>
 				<status value="entered-in-error"/>
 				<notGiven value="false"/>
