@@ -16,9 +16,9 @@ All "Vaccinations v2" event messages that are published to the NEMS **MUST** be 
 
 ## Bundle structure
 
-The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references a `List` resource as the focus of the event message. The `List` resource will contain atleast a "DocumentReference" resources which will point to where the latests immunization information can be retrieved.
+The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references a `List` resource as the focus of the event message. The `List` resource will contain at least one "DocumentReference" resource which will point to where the latest immunization information can be retrieved.
 
-The List may also reference an `Immunization` Resource contained in the message, this resource must represents the vaccination that was given or not given to the patient and is the focus of the event message.
+The List may also reference an `Immunization` resource contained in the message. This resource must represent the vaccination that was given or not given to the patient and is the focus of the event message.
 
 
 The diagram below shows the referencing between FHIR resources within the event message bundle:
@@ -97,9 +97,9 @@ The `List` resource **MUST** conform to the `List` base FHIR profile and the add
 
 |Element|Cardinality|Additional Guidance|
 |-------|-----------|-------------------|
-| entry.item.reference(DocumentReference) | 1..1 | Reference to DocumentReference resource representing retrieval endpoint |
-| entry.item.extension `(valueIdentifier).valueIdentifier` | 0..1 | This extension may be included on the `entry.item` for the entry related to the NRL DocumentReference.<br/><br/>The business identifier for the immunization which is the trigger/focus for this event, **MAY** be included within this extension to reference the specific immunization which will be returned within the list of immunizations retrieved from the endpoint. |
-| entry.item.reference(Immunization) | 0..1 | Reference to contained Immunization Resource if included |
+| entry.item.reference(DocumentReference) | 1..1 | Reference to the DocumentReference resource representing retrieval endpoint |
+| entry.item.extension `(valueIdentifier).valueIdentifier` | 0..1 | This extension may be included on the `entry.item` for the entry related to the NRL DocumentReference.<br/><br/>The business identifier for the immunization, which is the trigger/focus for this event, **MAY** be included within this extension to reference the specific immunization which will be returned within the list of immunizations retrieved from the endpoint. |
+| entry.item.reference(Immunization) | 0..1 | Reference to contained Immunization resource if included |
 
 
 ### [DocumentReference](https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1)
@@ -110,7 +110,7 @@ The DocumentReference resources **MUST**:
 
 - conform to the requirements in the [National Record Locator (NRL)](https://nrl-data-format-draft.netlify.app/) specification and the additional population guidance as per the table below
 - be a [pointer](https://nrl-data-format-draft.netlify.app/pointer_data_model_overview.html) of the `information type` ["Immunisations"](https://nrl-data-format-draft.netlify.app/supported_pointer_types.html)
-- point to immunization information and support atleast the [Vaccination List - FHIR STU3](https://nrl-data-format-draft.netlify.app/retrieval_vaccinations_fhir_stu3.html) retrieval format and interaction
+- point to immunization information and support at least the [Vaccination List - FHIR STU3](https://nrl-data-format-draft.netlify.app/retrieval_vaccinations_fhir_stu3.html) retrieval format and interaction
 
 | Resource Cardinality | 1..1 |
 
@@ -139,7 +139,7 @@ All Organization resources included in the bundle SHALL conform to the [CareConn
 
 ### [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1)
 
-If the contained Immunization resource is included as part of the event message SHALL conform to the [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1) constrained FHIR profile and the additional population guidance as per the table below:
+If the contained Immunization resource is included as part of the event message, it SHALL conform to the [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1) constrained FHIR profile and the additional population guidance as per the table below:
 
 | Resource Cardinality | 0..1 |
 
