@@ -106,18 +106,14 @@ The `List` resource **MUST** conform to the `List` base FHIR profile and the add
 
 The event message must contain a "NRL-DocumentReference-1" Resource which is a pointer to the endpoint URLs exposed by the publisher, where vaccination information can be retrieved by the subscriber.
 
-The DocumentReference resources **MUST**:
+The DocumentReference resource **MUST**:
 
-- conform to the requirements in the [National Record Locator (NRL)](https://nrl-data-format-draft.netlify.app/) specification and the additional population guidance as per the table below
+- conform to the requirements in the [National Record Locator (NRL)](https://nrl-data-format-draft.netlify.app/) specification 
 - be a [pointer](https://nrl-data-format-draft.netlify.app/pointer_data_model_overview.html) of the `information type` ["Immunisations"](https://nrl-data-format-draft.netlify.app/supported_pointer_types.html)
 - point to immunization information and support at least the [Vaccination List - FHIR STU3](https://nrl-data-format-draft.netlify.app/retrieval_vaccinations_fhir_stu3.html) retrieval format and interaction
+- be successfully created on the NRL, using the [create interaction](https://nrl-data-format-draft.netlify.app/api_interaction_create.html) before publishing this event message
 
 | Resource Cardinality | 1..1 |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| subject | 1..1 | This will reference the patients NHS Number representing the patient who is the subject of this immunization information. |
-
 
 
 
