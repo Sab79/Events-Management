@@ -228,17 +228,23 @@ The Location resources included as part of the event message SHALL conform to th
 
 ## Examples
 
+
 <div class="tabPanel">
 
 	<div class="tabHeadings">
-		<span class="tabHeading" id="new-given">New (Pointer Only)</span>
-		<span class="tabHeading" id="new-notgiven">New (inc Contained)</span>
-		<span class="tabHeading" id="update">Update (inc Contained)</span>
-		<span class="tabHeading" id="delete">Delete (inc Contained)</span>
+		<span class="tabHeading" id="new-pointer">New (Pointer Only)</span>
+		<span class="tabHeading" id="new-given">New Given (inc Imms)</span>
+		<span class="tabHeading" id="new-notgiven">New Not Given (inc Imms)</span>
+		<span class="tabHeading" id="update">Update (inc Imms)</span>
+		<span class="tabHeading" id="delete">Delete (inc Imms)</span>
 	</div>
 	
 	<div class="tabBodies">
 	
+		<div class="tabBody" id="new-pointerBody" markdown="span">
+			```{% include_relative examples/vaccinations-1-new-pointer.xml %}```
+		</div>
+		
 		<div class="tabBody" id="new-givenBody" markdown="span">
 			```{% include_relative examples/vaccinations-1-new.xml %}```
 		</div>
