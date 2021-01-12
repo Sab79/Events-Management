@@ -180,7 +180,7 @@
 				</extension>
 				<identifier>
 					<system value="https://supplierABC/identifiers"/>
-					<value value="abc1111"/>
+					<value value="ims11112"/>
 				</identifier>
 				<status value="completed"/>
 				<notGiven value="false"/>
