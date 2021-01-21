@@ -128,8 +128,8 @@
 					</attachment>
 					<format>
 						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-FormatCode-1"/>
-						<code value="urn:nhs-ic:fhir:stu3:vaccination-list:1"/>
-						<display value="Vaccination List FHIR STU3 v1"/>
+						<code value="urn:nhs-ic:fhir:stu3:careconnect-immunizations-fhir-stu3"/>
+						<display value="CareConnect Immunizations FHIR STU3"/>
 					</format>
 					<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NRL-ContentStability-1">
 						<valueCodeableConcept>
