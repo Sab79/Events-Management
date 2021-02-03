@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
-  product: National Events Management Service (NEMS) 
-  version: 2.7.2-Beta
+  product: NEMS
+  version: 2.8.0 (Draft)
   levels: one
   folders:
 
@@ -79,14 +79,14 @@ entries:
         - title: Professional Contacts
           url: /professional_contacts_1.html
           output: web
-        - title: Vaccinations
-          url: /vaccinations_1.html
-          output: web
         - title: Vaccinations v2
           url: /vaccinations_2.html
           output: web
-        - title: Vaccinations v2_light
-          url: /vaccinations_2_light.html
+      - title: Messages (Deprecated)
+        output: web
+        subfolderitems:
+        - title: Vaccinations
+          url: /vaccinations_1.html
           output: web
           
   - title: Subscription Management

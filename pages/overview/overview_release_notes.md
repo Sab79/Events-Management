@@ -7,6 +7,15 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in National Events Management Service Implementation Guide
 ---
 
+## 2.8.0 (Draft) ##
+
+[Vaccinations](vaccinations_1.html)
+- Message to be deprecated, users should move to using the vaccination v2 message.
+
+[Vaccinations v2](vaccinations_2.html)
+- New Vaccination event message
+
+
 ## 2.7.2-Beta (07/12/2020) ##
 
 [Vaccinations](vaccinations_1.html)

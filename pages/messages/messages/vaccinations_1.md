@@ -7,6 +7,9 @@ permalink: vaccinations_1.html
 summary: "Guidance and requirements for the Vaccinations event message"
 ---
 
+{% include warning.html content="This version of the vaccination event message is being deprecated and providers and consumers should use the new [Vaccination v2](vaccinations_2.html) event message." %}
+
+
 ## Event Message Content
 
 The `Vaccinations` event message represents a single vaccination given or not-given to a patient and any relevant supporting information.

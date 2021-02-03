@@ -107,15 +107,14 @@ The `List` resource **MUST** conform to the `List` base FHIR profile and the add
 
 The event message SHOULD contain a "NRL-DocumentReference-1" Resource which is a pointer to the endpoint URLs exposed by the publisher, where vaccination information can be retrieved by the subscriber.
 
+| Resource Cardinality | 0..1 |
+
 The DocumentReference resource **MUST**:
 
 - conform to the requirements in the [National Record Locator (NRL)](https://nrl-data-format-draft.netlify.app/) specification 
 - be a [pointer](https://nrl-data-format-draft.netlify.app/pointer_data_model_overview.html) of the `information type` ["Immunisations"](https://nrl-data-format-draft.netlify.app/supported_pointer_types.html)
 - point to immunization information and support at least the [CareConnect Immunizations FHIR STU3](https://nrl-data-format-draft.netlify.app/retrieval_careconnect_immunizations_fhir_stu3.html) retrieval format and interaction
 - be successfully created on the NRL, using the [create interaction](https://nrl-data-format-draft.netlify.app/api_interaction_create.html) before publishing this event message
-
-| Resource Cardinality | 0..1 |
-
 
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
@@ -130,101 +129,11 @@ All Organization resources included in the bundle SHALL conform to the [CareConn
 | name | 1..1 | A human readable name for the organization SHALL be included in the organization resource. |
 
 
-
-## Included Immunization Resource and Supporting Resources
-
-
-### [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1)
-
-If the Immunization resource is included as part of the event message, it SHALL conform to the [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 0..1 |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| extension(vaccinationProcedure) | 1..1 |  A code from the SNOMED Clinical Terminology UK coding system, to record a vaccination procedure that is either given or not given.<br/><br/>If a vaccination is given, then an immunisation procedure concept or an immunisation situation (given) concept SHALL be used.<br/><br/>If a vaccination has not been given, then an immunisation situation (not done) concept SHALL be used.<br/><br/>Free text field should be used if no coded text available using `extension(vaccinationProcedure).valueCodeableConcept.text` |
-| identifier | 1..1 | A publisher defined unique identifier for the vaccination which will be maintained across different event messages to allow subscribers to be identify the information within update or delete event messages. |
-| notGiven | 1..1 | Value SHALL be `FALSE` when the vaccination was given or reported as given, `TRUE` when not given |
-| vaccineCode | 1..1 | Immunization.vaccineCode SHALL use a value from  the [CareConnect-VaccineCode-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-VaccineCode-1) value set |
-| date | 1..1 | The date or partial date that the vaccination was administered, or reported vaccination was given in the opinion of the child and/or parent carer |
-| primarySource | 1..1 | Value should be `FALSE` if the vaccination was reported, `TRUE` if the vaccination was administered |
-| reportOrigin | 0..1 | If the vaccination was reported then the original source should be include |
-| manufacturer | 0..1 | Where available this should be included |
-| site | 0..1 | Where available this should be included |
-| route | 0..1 | Where available this should be included |
-| explanation.reasonNotGiven | 0..1 | If the vaccination was `notGiven` then the `reasonNotGiven` element SHALL be included |
-| vaccinationProtocol.doseSequence | 0..1 | Where available the `doesSequence` should be include |
-
-
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
-
-The patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 0..1 |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| identifier | 1..1 | Patient NHS Number identifier SHALL be included within the nhsNumber identifier slice |
-| name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the official name element slice |
-| birthDate | 1..1 | The patients date of birth |
-
-
-### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
-
-The Practitioner resources included as part of the event message SHALL conform to the [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1) constrained FHIR profile.
+## [CareConnect-Immunization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Immunization-1) Resource and Supporting Resources
 
 | Resource Cardinality | 0..* |
 
-
-### [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1)
-
-The PractitionerRole resources included as part of the event message SHALL conform to the [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1) constrained FHIR profile.
-
-| Resource Cardinality | 0..* |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| organization | 1..1 | Reference to the Organization where the practitioner performs this role |
-| practitioner | 1..1 | Reference to the Practitioner who this role relates to |
-| code | 1..* | The practitioner role SHALL included a value from the [ProfessionalType-1](https://fhir.nhs.uk/STU3/ValueSet/ProfessionalType-1) value set. The PractitionerRole.code should also include the SDS Job Role name where available. |
-| specialty | 1..1 | PractitionerRole.specialty SHALL use a value from [Specialty-1](https://fhir.nhs.uk/STU3/ValueSet/Specialty-1) value set |
-
-
-### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
-
-The Encounter resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 0..1 |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| Encounter.type | 1..* | The encounter type SHOULD include a value from the [EncounterType-1](https://fhir.nhs.uk/STU3/ValueSet/EncounterType-1) value set. This value set is extensible so additional values and code systems may be added where required. |
-| location | 0..1 | Reference to the location at which the encounter took place |
-| subject | 1..1 | A reference to the patient resource representing the subject of this event |
-
-
-
-### [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1)
-
-The HealthcareService resource included as part of the event message SHALL conform to the [CareConnect-HealthcareService-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 0..1 |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| providedBy | 1..1 | Reference to the organization who provides the healthcare service |
-| type | 1..1 | This will represent the type of service responsible for the event message. This will have a fixed value from the ValueSet [CareConnect-CareSettingType-1](https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-CareSettingType-1) |
-| specialty | 1..1 | The specialty SHALL be a value from the [Specialty-1](https://fhir.nhs.uk/STU3/ValueSet/Specialty-1) value set |
-
-### [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)
-
-The Location resources included as part of the event message SHALL conform to the [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1) constrained FHIR profile and the additional population guidance as per the table below:
-
-| Resource Cardinality | 0..* |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| identifier | 0..* | Where available the ODS Site Code slice should be populated |
+The contained `Immunization` resource and any supporting resources MUST be populated and formatted in the bundle in the same way they would be if the consumer had retrieved the information using the [CareConnect Immunization FHIR STU3 - Read](https://nhsconnect.github.io/CareConnectAPI/api_medication_immunization.html#1-read) intertaction.
 
 
 ## Examples
