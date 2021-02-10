@@ -32,6 +32,7 @@ The following are event messages currently supported by the NEMS:
 
 | Event | Publish Interaction Event Code | Publication API | Subscription API | Date Available | Event Maturity |
 |---|---|:---:|:---:|---|---|
+| [Allergy and Intolerance v1](allergy_intolerance_1.html) | Allergy_Intolerance_1 | &#9989; | &#9989; | TBC | Beta |
 | [Blood Spot Test Outcome](blood_spot_test_outcome_1.html) | Bloodspottestoutcome | &#9989; | &#9989; | October 2019 | Release Candidate |
 | [Newborn Hearing](newborn_hearing_1.html) | Newbornhearing | &#9989; | &#9989; | October 2019 | Release Candidate |
 | [NIPE Outcome](nipe_outcome_1.html) | Nipeoutcome | &#9989; | &#9989; | October 2019 | Release Candidate |
