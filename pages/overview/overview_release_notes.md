@@ -9,6 +9,9 @@ summary: Summary release notes of the versions released in National Events Manag
 
 ## 2.8.0 (Draft) ##
 
+[Allergies and Adverse Reactions v1](allergies_1.html)
+- New Allergies and Adverse Reactions event message added
+
 [Vaccinations](vaccinations_1.html)
 - Message to be deprecated, users should move to using the vaccination v2 message.
 

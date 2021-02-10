@@ -55,8 +55,8 @@ entries:
       - title: Messages
         output: web
         subfolderitems:
-        - title: Allergy and Intolerance v1
-          url: /allergy_intolerance_1.html
+        - title: Allergies and Adverse Reactions v1
+          url: /allergies_1.html
           output: web
         - title: Blood Spot Test Outcome
           url: /blood_spot_test_outcome_1.html

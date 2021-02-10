@@ -32,7 +32,7 @@ The following are event messages currently supported by the NEMS:
 
 | Event | Publish Interaction Event Code | Publication API | Subscription API | Date Available | Event Maturity |
 |---|---|:---:|:---:|---|---|
-| [Allergy and Intolerance v1](allergy_intolerance_1.html) | Allergy_Intolerance_1 | &#9989; | &#9989; | TBC | Beta |
+| [Allergies and Adverse Reactions v1](allergies_1.html) | allergies-and-adverse-reactions-1 | &#9989; | &#9989; | TBC | Beta |
 | [Blood Spot Test Outcome](blood_spot_test_outcome_1.html) | Bloodspottestoutcome | &#9989; | &#9989; | October 2019 | Release Candidate |
 | [Newborn Hearing](newborn_hearing_1.html) | Newbornhearing | &#9989; | &#9989; | October 2019 | Release Candidate |
 | [NIPE Outcome](nipe_outcome_1.html) | Nipeoutcome | &#9989; | &#9989; | October 2019 | Release Candidate |
@@ -41,7 +41,7 @@ The following are event messages currently supported by the NEMS:
 | [PDS Change of GP](pds_change_of_gp.html) | N/A | &#10060; | &#9989; | March 2019 | Release Candidate |
 | [PDS Death Notification](pds_death_notification.html) | N/A | &#10060; | &#9989; | March 2019 | Release Candidate |
 | [Professional Contacts](professional_contacts_1.html) | Professionalcontacts | &#9989; | &#9989; | February 2020 | Release Candidate |
-| [Vaccinations v2](vaccinations_2.html) | Vaccinations_2 | &#9989; | &#9989; | TBC | Beta |
+| [Vaccinations v2](vaccinations_2.html) | vaccinations-2 | &#9989; | &#9989; | TBC | Beta |
 
 
 ### Deprecated Event Messages
