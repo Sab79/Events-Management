@@ -18,6 +18,20 @@ summary: Summary release notes of the versions released in National Events Manag
 [Vaccinations v2](vaccinations_2.html)
 - New Vaccination event message
 
+## 2.7.4 (TBC) ##
+
+[Generic Event Message Requirements](explore_generic_event_requirements.html)
+- Added additional guidance around element order within FHIR resources and conformance to schemas.
+
+[PDS Record Change](pds_record_change.html)
+- Added PDS Record Change event
+
+## 2.7.3 (22/02/2021) ##
+
+- Removal of Beta status from project
+
+[Subscription Information Governance](subscription_ig.html)
+- Added S-Flag and I-Flag guidance to improve clarity in the specification
 
 ## 2.7.2-Beta (07/12/2020) ##
 
