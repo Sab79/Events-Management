@@ -1,7 +1,7 @@
 entries:
 - title: National Events Management Service (NEMS)  
-  product: NEMS
-  version: 2.8.0 (Draft)
+  product: National Events Management Service (NEMS) 
+  version: 2.9.0 (Draft)
   levels: one
   folders:
 
