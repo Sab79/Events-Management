@@ -1,0 +1,227 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="6e824ff8-9b0a-11e8-9eb6-529269fb1459"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/STU3/StructureDefinition/Bundle"/>
+	</meta>
+	<type value="message"/>
+	<entry>
+		<fullUrl value="urn:uuid:85c8a1c5-a8a1-41c9-bb99-20956fa66218"/>
+		<resource>
+			<MessageHeader>
+				<id value="85c8a1c5-a8a1-41c9-bb99-20956fa66218"/>
+				<meta>
+					<lastUpdated value="2017-11-01T15:22:11+00:00"/>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
+				</meta>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RoutingDemographics-1">
+					<extension url="nhsNumber">
+						<valueIdentifier>
+							<system value="https://fhir.nhs.uk/Id/nhs-number"/>
+							<value value="9912003888"/>
+						</valueIdentifier>
+					</extension>
+					<extension url="name">
+						<valueHumanName>
+							<use value="official"/>
+							<family value="DAWKINS"/>
+							<given value="Jack"/>
+						</valueHumanName>
+					</extension>
+					<extension url="birthDateTime">
+						<valueDateTime value="2017-10-02T12:00:00+00:00"/>
+					</extension>
+				</extension>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-MessageEventType-1">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.nhs.uk/STU3/CodeSystem/MessageEventType-1"/>
+							<code value="update"/>
+							<display value="Update event message"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<event>
+					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
+					<code value="vaccinations-3"/>
+					<display value="Vaccinations v3"/>
+				</event>
+				<timestamp value="2017-02-14T15:22:11+00:00"/>
+				<source>
+					<contact>
+						<system value="phone"/>
+						<value value="0191 1231234"/>
+					</contact>
+					<endpoint value="urn:nhs:addressing:asid:300000000161"/>
+				</source>
+				<responsible>
+					<reference value="urn:uuid:3ff6d789-af64-4d9c-aa1d-0087d29e9e1c"/>
+					<display value="SILVERDALE FAMILY PRACTICE"/>
+				</responsible>
+				<focus>
+					<reference value="urn:uuid:c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
+				</focus>
+			</MessageHeader>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
+		<resource>
+			<DocumentReference>
+				<id value="c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
+				<meta>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1"/>
+				</meta>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="33879002"/>
+						<display value="Immunisation"/>
+					</coding>
+				</type>
+				<class>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="716931000000107"/>
+						<display value="Record headings"/>
+					</coding>
+				</class>
+				<subject>
+					<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/9912003888"/>
+				</subject>
+				<indexed value="2016-03-08T15:26:01+01:00"/>
+				<author>
+					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/A83627"/>
+				</author>
+				<custodian>
+					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/A83627"/>
+				</custodian>
+				<content>
+					<attachment>
+						<contentType value="application/fhir+xml"/>
+						<url value="https://p1.nhs.uk/Patient/12345/Immunization/12346"/>
+						<creation value="2016-03-08T15:26:00+01:00"/>
+					</attachment>
+					<format>
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-FormatCode-1"/>
+						<code value="urn:nhs-ic:fhir:stu3:careconnect-immunization-fhir-stu3"/>
+						<display value="CareConnect Immunization FHIR STU3"/>
+					</format>
+					<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NRL-ContentStability-1">
+						<valueCodeableConcept>
+							<coding>
+								<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-ContentStability-1"/>
+								<code value="dynamic"/>
+								<display value="Dynamic"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+				</content>
+				<context>
+					<period>
+						<start value="2016-03-07T13:34:00+01:00"/>
+					</period>
+					<practiceSetting>
+						<coding>
+							<system value="http://snomed.info/sct"/>
+							<code value="788007007"/>
+							<display value="General practice service"/>
+						</coding>
+					</practiceSetting>
+				</context>
+			</DocumentReference>
+		</resource>
+	</entry>
+		<entry>
+		<fullUrl value="urn:uuid:c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
+		<resource>
+			<DocumentReference>
+				<id value="c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
+				<meta>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1"/>
+				</meta>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="1102181000000102"/>
+						<display value="Immunisations"/>
+					</coding>
+				</type>
+				<class>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="716931000000107"/>
+						<display value="Record headings"/>
+					</coding>
+				</class>
+				<subject>
+					<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/9912003888"/>
+				</subject>
+				<indexed value="2016-03-08T15:26:01+01:00"/>
+				<author>
+					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/A83627"/>
+				</author>
+				<custodian>
+					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/A83627"/>
+				</custodian>
+				<content>
+					<attachment>
+						<contentType value="application/fhir+xml"/>
+						<url value="https://p1.nhs.uk/Patient/12345/Immunization"/>
+						<creation value="2016-03-08T15:26:00+01:00"/>
+					</attachment>
+					<format>
+						<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-FormatCode-1"/>
+						<code value="urn:nhs-ic:fhir:stu3:careconnect-immunization-list-fhir-stu3"/>
+						<display value="CareConnect Immunization List FHIR STU3"/>
+					</format>
+					<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NRL-ContentStability-1">
+						<valueCodeableConcept>
+							<coding>
+								<system value="https://fhir.nhs.uk/STU3/CodeSystem/NRL-ContentStability-1"/>
+								<code value="dynamic"/>
+								<display value="Dynamic"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+				</content>
+				<context>
+					<period>
+						<start value="2016-03-07T13:34:00+01:00"/>
+					</period>
+					<practiceSetting>
+						<coding>
+							<system value="http://snomed.info/sct"/>
+							<code value="788007007"/>
+							<display value="General practice service"/>
+						</coding>
+					</practiceSetting>
+				</context>
+			</DocumentReference>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:3ff6d789-af64-4d9c-aa1d-0087d29e9e1c"/>
+		<resource>
+			<Organization>
+				<id value="3ff6d789-af64-4d9c-aa1d-0087d29e9e1c"/>
+				<meta>
+					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"/>
+				</meta>
+				<identifier>
+					<system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+					<value value="A83627"/>
+				</identifier>
+				<name value="SILVERDALE FAMILY PRACTICE"/>
+				<address>
+					<line value="FRONT STREET"/>
+					<line value="SOUTH HETTON"/>
+					<city value="DURHAM"/>
+					<district value="COUNTY DURHAM"/>
+					<postalCode value="DH6 2TH"/>
+				</address>
+			</Organization>
+		</resource>
+	</entry>
+</Bundle>

@@ -88,6 +88,9 @@ entries:
         - title: Vaccinations v2
           url: /vaccinations_2.html
           output: web
+        - title: Vaccinations v3
+          url: /vaccinations_3.html
+          output: web
       - title: Messages (Deprecated)
         output: web
         subfolderitems:
