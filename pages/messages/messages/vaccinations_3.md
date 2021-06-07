@@ -53,6 +53,7 @@ The delivery of the `Vaccinations v3` event messages to subscribers via MESH wil
 
 | MESH WorkflowID | `NEMS_EVENT_1` |
 
+{% include important.html content="This workflow ID is generic for multiple NEMS event messages. Subscribers will need to identify the type of event by looking at the '`event`' element within the '`MessageHeader`' resource." %}
 
 ## Resource Population Requirements and Guidance ##
 

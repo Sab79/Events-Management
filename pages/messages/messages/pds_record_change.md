@@ -7,7 +7,7 @@ permalink: pds_record_change.html
 summary: "The PDS Record Change event"
 ---
 
-The `PDS Record Change` event message is generated and published by the Spine, when a change is made to a patient record within the Patient Demographics Service (PDS). The event message does not contain all the PDS information as the event message is only intended to be a notification that the reference patient record has changed, and allow the subscriber to perform their existing PDS synchronisation processes.
+The `PDS Record Change` event message is generated and published by the Spine, when a change is made to a patient record within the Patient Demographics Service (PDS). The event message does not contain all the PDS information as the event message is only intended to be a notification that the referenced patient record has changed, and allow the subscriber to perform their existing PDS synchronisation processes.
 
 Any change to a patients PDS record will trigger the publication of this event, some example of changes that would trigger this event are:
 
@@ -30,8 +30,9 @@ The following is the FHIR event message structure for the PDS Record Change even
 
 The delivery of the PDS Record Change event messages to subscribers via MESH will use the following WorkflowID within the MESH control file. This WorkflowID will need to be added to the receiving MESH mailbox configuration before event messages can be received. 
 
-| MESH WorkflowID | PDS_RECORD_CHANGE_1 |
+| MESH WorkflowID | NEMS_EVENT_1 |
 
+{% include important.html content="This workflow ID is generic for multiple NEMS event messages. Subscribers will need to identify the type of event by looking at the '`event`' element within the '`MessageHeader`' resource." %}
 
 ## Resource Population Guidance 
 
