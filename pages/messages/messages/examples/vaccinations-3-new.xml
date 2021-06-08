@@ -60,6 +60,9 @@
 				<focus>
 					<reference value="urn:uuid:c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
 				</focus>
+				<focus>
+					<reference value="urn:uuid:bb86ac04-c85c-11eb-b8bc-0242ac130003"/>
+				</focus>
 			</MessageHeader>
 		</resource>
 	</entry>
@@ -133,10 +136,10 @@
 		</resource>
 	</entry>
 		<entry>
-		<fullUrl value="urn:uuid:c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
+		<fullUrl value="urn:uuid:bb86ac04-c85c-11eb-b8bc-0242ac130003"/>
 		<resource>
 			<DocumentReference>
-				<id value="c037a0cb-0c77-4976-83a1-a5d2703e6aa3"/>
+				<id value="bb86ac04-c85c-11eb-b8bc-0242ac130003"/>
 				<meta>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/NRL-DocumentReference-1"/>
 				</meta>
