@@ -51,8 +51,11 @@ entries:
     - title: Supported Messages
       url: /overview_supported_events.html
       output: web
+    - title: Lightweight Event Messages
+      url: /lightweight_1.html
+      output: web  
       subfolders:
-      - title: Messages
+      - title: Contained Event Messages
         output: web
         subfolderitems:
         - title: Blood Spot Test Outcome

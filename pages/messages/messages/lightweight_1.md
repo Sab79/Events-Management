@@ -1,38 +1,54 @@
 ---
-title: Demographics Change Notification
+title: NEMS Lightweight Events
 keywords:  messaging, bundles
 tags: [fhir,messaging]
 sidebar: overview_sidebar
-permalink: demographics_change_notification.html
-summary: "The Demographics Change Notification event"
+permalink: lightweight_1.html
+summary: "Lightweight events supported by the NEMS"
 ---
 
-The `Demographics Change Notification` event message is generated and published by the Spine, when a change is made to a patient record within the Patient Demographics Service (PDS). The event message does not contain all the PDS information as the event message is only intended to be a notification that the referenced patient record has changed, and allow the subscriber to perform their existing PDS synchronisation processes.
+What?
+Why?
+How?
 
-Any change to a patients PDS record will trigger the publication of this event, some example of changes that would trigger this event are:
+## Event Types
 
-- The NHS Number on the record being superseded
-- Changes to demographic information
-- Changes to contact details
-- Application/Removal of S-Flags, I-Flags
+| Event Type | Description | Pointer Class | Pointer Type | Retrieval Format(s) |
+| --- | --- | --- | --- | --- |
+| demographic-change-1 | Notification of a change to a patients demographics | Record Heading | Demographics | [PDS_FHIR_API](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir) |
+| vaccination-2 | A message which represents a vaccingaiton being given. | Record Heading | Vaccination | FHIR_STU3_Vaccination-1<br/>FHIR_STU3_Vaccination_List-1 |
+
+
+## Document Reference Types and Retrieval
+
+| Event Type | Pointer Class | Pointer Type | Retrieval Format(s) |
+| --- | --- | --- | --- |
+| demographic-change-1 | Record Heading | Demographics | [PDS_FHIR_API](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir) |
+| vaccination-2 | Record Heading | Vaccination | FHIR_STU3_Vaccination-1<br/>FHIR_STU3_Vaccination_List-1 |
+
+
 
 
 ## FHIR Event Message Structure 
  
-The following is the FHIR event message structure for the PDS Record Change event.
+The following is the FHIR message structure for all NEMS lightweight event messages.
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/messages/pds_record_change.png" target="_blank"><img src="images/messages/pds_record_change.png"></a>
+	<a href="images/messages/lightweight_1.png" target="_blank"><img src="images/messages/lightweight_1.png"></a>
 </div>
+
+Describe what the components mean?
 
 
 ## Onward Delivery 
 
-The delivery of the PDS Record Change event messages to subscribers via MESH will use the following WorkflowID within the MESH control file. This WorkflowID will need to be added to the receiving MESH mailbox configuration before event messages can be received. 
+MESH will use the following generic WorkflowID within the MESH control file. This WorkflowID will need to be added to the receiving MESH mailbox configuration before event messages can be received. 
 
 | MESH WorkflowID | NEMS_EVENT_1 |
 
 {% include important.html content="This workflow ID is generic for multiple NEMS event messages. Subscribers will need to identify the type of event by looking at the '`event`' element within the '`MessageHeader`' resource." %}
+
+
 
 ## Resource Population Guidance 
 
@@ -67,24 +83,19 @@ The MessageHeader resource included as part of the event message SHALL conform t
 **Note:** Where the event message relates to a PDS record being superseded by another, the patient details included in the event will be for the record which is being superceeded rather than the record which is superseding it.
 
 
-### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
-
-This Patient resource included in the event message SHALL conform to the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) constrained FHIR profile and the additional population guidance as per the table below:
+### [DocumentReference](https://www.hl7.org/fhir/stu3/documentreference.html)
 
 | Resource Cardinality | 1..1 |
 
-The following table outlines the key elements which will be included, but additional elements and extensions may be included in the resource.
-
 | Element | Cardinality | Additional Guidance |
 | --- | --- | --- |
-| meta.versionId | 1..1 | This element will contain the serial change number (SCN) of the patient's record within Spine at the time this event was published. |
-| identifier | 1..1 | The NHS Number of the patient will be included in the nhsNumber identifier slice. If the event message is the result of the PDS record being superseeded this will be the NHS Number of the record being superseded and not the record which is superseding it. |
-| name (official) | 1..1 | The patient's name as registered on PDS, included within the resource as the `official` name element slice |
-| birthDate | 1..1 | The patients date of birth. |
+| patient | 1..1 | abc |
+| class | 1..1 | abc |
+| type | 1..1 | abc |
+| retrieval format |
 
 
-
-## PDS Record Change Example ##
+## Examples ##
 
 ```xml
 {% include_relative examples/PDS-Record-Change.xml %}
